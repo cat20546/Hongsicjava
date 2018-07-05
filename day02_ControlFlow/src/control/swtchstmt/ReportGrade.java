@@ -1,4 +1,4 @@
-package control.ifstmt;
+package control.swtchstmt;
 
 import java.util.Scanner;
 
@@ -16,48 +16,42 @@ import java.util.Scanner;
  * @author JACK
  *
  */
-public class Grade {
+public class ReportGrade {
 
 	public static void main(String[] args) {
+	
 		// 1. 선언
 		int score;
 		char grade;
 		Scanner scan;
-		
+
 		// 2. 초기화
 		scan = new Scanner(System.in);
 		
-		// 스캐너를 사용하여 score 변수 초기화
 		System.out.println("0 ~ 100 사이의 정수를 입력하시오.");
 		score = scan.nextInt();
 		
-
-		// 3. 사용 : score에 입력된 값을 판단
-		if(score>=90){
+		// 3. 사용
+		
+		switch (score/10) {	
+		case 9 : case 10:
 			grade = 'A';
-		} else if(score>=80 && score<90){
+			break;
+		case 8 :
 			grade = 'B';
-		} else if(score>=60 && score<80){
+			break;
+		case 6 : case 7 :
 			grade = 'C';
-		} else if(score>=40 && score<60){
+			break;
+		case 4 : case 5:
 			grade = 'D';
-		} else {
-			grade = 'F';
+			break;
+		default: 
+			grade ='F';
+			break;
 		}
-	
-		if(score>=90){
-			grade = 'A';
-		} else if(score>=80 ){ 
-			grade = 'B';
-		} else if(score>=60 ){
-			grade = 'C';
-		} else if(score>=40 ){
-			grade = 'D';
-		} else {
-			grade = 'F';
-		}
-	
-	System.out.printf("%d점에 해당하는 학점은 %c 입니다." ,score, grade);
-	
+		
+		System.out.printf("%d점에 해당하는 학점은 %c 입니다." ,score, grade);
 	}
+
 }
