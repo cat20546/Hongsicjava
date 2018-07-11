@@ -32,7 +32,7 @@ public class Product {
 	}
 
 	public void print() {
-		System.out.printf("제품 정보 [제품코드 : %s, 제품명 : %s 가격  %d: ,재고 수량 : %d]%n", prodCode, prodName, price, quantity);
+		System.out.printf("제품 정보 [제품코드 : %s, 제품명 : %s, 가격 : %d, 재고 수량 : %d]%n", prodCode, prodName, price, quantity);
 	}
 
 	public int discount(double percentage) {
